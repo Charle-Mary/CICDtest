@@ -18,7 +18,7 @@ jobs:
           name: "print hello"
           command: echo "Hello, World!" > workspace/output
           
-      persist_to_workspace:
+      - persist_to_workspace:
           root: workspace
           paths: output
   
@@ -31,11 +31,12 @@ jobs:
       - run:
           name: "print world"
           command: "echo Hello World!"
+      - attach_workspace:
+          at: workspace
       - run:
           command: cat output
     
-      attach_workspace:
-          at: workspace
+      
 
   
   print-name:
