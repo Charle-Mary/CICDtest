@@ -49,5 +49,5 @@ workflows:
           requires: [print-world]
       - print-world:
           requires: [print-name]
-      - print-name:
+      - print-name
 
