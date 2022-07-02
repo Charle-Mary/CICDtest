@@ -18,9 +18,9 @@ jobs:
           name: "print hello"
           command: echo "Hello, World!" > workspace/output
           
-    persist_to_workspace:
-        root: workspace
-        paths: output
+      persist_to_workspace:
+          root: workspace
+          paths: output
   
   print-output-file:
     docker:
@@ -34,8 +34,8 @@ jobs:
       - run:
           command: cat output
     
-    attach_workspace:
-        at: workspace
+      attach_workspace:
+          at: workspace
 
   
   print-name:
