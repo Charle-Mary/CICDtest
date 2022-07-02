@@ -16,10 +16,10 @@ jobs:
       - checkout
       - run:
           name: "print hello"
-          command: echo "Hello, World!" > workspace/output
+          command: echo "Hello, World!" > ~/output
           
       - persist_to_workspace:
-          root: workspace
+          root: ~/
           paths: output
   
   print-output-file:
@@ -32,7 +32,7 @@ jobs:
           name: "print world"
           command: "echo Hello World!"
       - attach_workspace:
-          at: workspace
+          at: ~/
       - run:
           command: cat output
     
