@@ -16,11 +16,11 @@ jobs:
       - checkout
       - run:
           name: "print hello"
-          command: echo "Hello, World!" > output.txt
+          command: echo "Hello, World!" > workspace/output
           
     persist_to_workspace:
-        root: ~/tmp/files
-        paths: output.txt
+        root: workspace
+        paths: output
   
   print-output-file:
     docker:
@@ -32,10 +32,10 @@ jobs:
           name: "print world"
           command: "echo Hello World!"
       - run:
-          command: cat output.txt
+          command: cat output
     
     attach_workspace:
-        at: /tmp/files
+        at: workspace
 
   
   print-name:
